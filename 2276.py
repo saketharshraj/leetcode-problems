@@ -24,6 +24,8 @@ class CountIntervals:
             elif lower <= left <= upper and right > upper:
                 self.data[i][1] = right
                 new_range = [lower, right]
+            elif left >= lower and right <= upper:
+                new_range = 1  # no need change anything in data
         if not new_range:
             self.data.append([left, right])
             self.rangeCount += right - left + 1
