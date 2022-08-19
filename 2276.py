@@ -30,7 +30,8 @@ class CountIntervals:
             self.data.append([left, right])
             self.rangeCount += right - left + 1
             return None
-        
+        if new_range == 1:
+            return None
         old = old_range[1] - old_range[0] + 1
         new = new_range[1] - new_range[0] + 1
         self.rangeCount += new - old
